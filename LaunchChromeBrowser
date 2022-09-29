@@ -1,0 +1,27 @@
+package com.Selenium;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LaunchBrowser {
+
+    public static void main(String[] args) throws InterruptedException {
+        // Set which browser im going to use and where exactly my browser driver file is located
+        //1. Launch the browser window by pointing the local location of chromedriver.exe path
+        System.setProperty("webdriver.chrome.driver","C://Users//Saran//chromedriver_win32/chromedriver.exe");
+
+        //2. Launch the browser window pointing inside the package from Driver folder
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Driver\\chromedriver.exe");
+
+        //3. Launch the browser window using relative path method
+        System.setProperty("webdriver.chrome.driver",".//Driver//chromedriver.exe");
+
+        //4. Launch the browser window using WebDriverManager.jar
+        WebDriverManager.chromedriver().setup();
+
+        // Instantiate ChromeDriver
+        WebDriver driverObj = new ChromeDriver();
+
+    }
+}
